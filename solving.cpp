@@ -26,9 +26,9 @@ int Linear(const Coeffs *coeffs, Roots *roots) {
 int Quadr(const Coeffs *coeffs, Roots *roots) {
 
     assert (roots != NULL);
-    assert (coeffs != NULL);         //когда у меня strucs передан по указателю, надо бахать ->
+    assert (coeffs != NULL);
 
-    double discr = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c; /* дискриминант */
+    double discr = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c; /* discriminant */
 
     if (discr < 0)
         return NoRoots;
@@ -45,12 +45,12 @@ int Quadr(const Coeffs *coeffs, Roots *roots) {
     return TwoRoots;
 }
 
-int SqrEq(const Coeffs *coeffs, Roots *roots) { /* функция, которая решает квадратное уравнение */
+int SqrEq(const Coeffs *coeffs, Roots *roots) { /* function for solving squere equation */
 
     assert (roots != NULL);
-    assert (coeffs != NULL);      /* ошибочки */
+    assert (coeffs != NULL);      /* asserts */
 
-    if (CompareDoubles(coeffs->a, 0)) { /* вариант, когда уравнение линейное */
+    if (CompareDoubles(coeffs->a, 0)) { /*Linear variant */
         return Linear(coeffs, roots);
     }
 
