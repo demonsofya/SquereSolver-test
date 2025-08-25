@@ -38,33 +38,3 @@ int Help(void) {
     return 0;
 }
 
-/*int IsShortFlag(const char *flag) {
-
-    assert(flag != NULL);
-
-    if ((*flag)[0] == '-') {
-
-        if ((*flag)[0] == 't' && (*flag)[1] == '\0')
-            return 't';
-
-        if ((*flag)[0] == 'h' && (*flag)[1] == '\0')
-            return 'h';
-    }
-
-    return 0;
-}
-
-int IsLongFlag(flag_size, const char *flag) {
-    if ((*flag)[0] == '-' && (*flag)[1] == '-') {
-
-        if (flag_size == 6) {
-            if ((*flag)[0] == 't' && (*flag)[1] == 'e' && (*flag)[2] == 's' && (*flag)[1] == 't' && (*flag)[2)
-                return 't';
-
-            if ((*flag)[0] == 'h' && (*flag)[1] == 'e')
-                return 'h';
-        }
-    }
-}
-*/
-
