@@ -7,7 +7,6 @@
 #include "solving.h"
 #include "isflag.h"
 
-//int main(int argc, char *argv[])
 
 int main(int argc, char *argv[]) {
 
@@ -19,8 +18,8 @@ int main(int argc, char *argv[]) {
         return Help();
 
     Coeffs input_coeffs = {NAN, NAN, NAN};
-    Roots solved_roots = {NAN, NAN, 0};   // TODO: third  COMPLETED
-    Test(); // TODO: capital letter!!!
+    Roots solved_roots = {NAN, NAN, 0}; 
+    Test(); 
 
     Scan(&input_coeffs);
 
