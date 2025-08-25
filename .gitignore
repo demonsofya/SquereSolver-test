@@ -1,0 +1,8 @@
+*.o 
+*.exe 
+*.save 
+*.txt
+*.s
+constants.h
+structs.h
+output.h.gch
