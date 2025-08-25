@@ -36,7 +36,7 @@ bool IsRootsRight(const Roots *roots, int test_num) {
     assert(roots != NULL);
 
     switch (TESTS[test_num].roots.number_of_roots) {
-        case TwoRoots:    // TODO: бахнуть контсанты COMPLETED
+        case TwoRoots:
             if (!(((((CompareDoubles(roots->x1, TESTS[test_num].roots.x1) && CompareDoubles(roots->x2, TESTS[test_num].roots.x2))) ||
                 (((CompareDoubles(roots->x2, TESTS[test_num].roots.x1) && CompareDoubles(roots->x1, TESTS[test_num].roots.x2)))))
                 && roots->number_of_roots == 2))) {
@@ -82,41 +82,9 @@ bool IsRootsRight(const Roots *roots, int test_num) {
     }
 
     return true;
-
-    /*if (TESTS[test_num].roots.number_of_roots == 2) {   // если корней два
-        if (!(((CompareDoubles(roots->x1, TESTS[test_num].roots.x1) && CompareDoubles(roots->x2, TESTS[test_num].roots.x2)) ||
-             ((CompareDoubles(roots->x2, TESTS[test_num].roots.x1) && CompareDoubles(roots->x1, TESTS[test_num].roots.x2))) &&
-             roots->number_of_roots == 2))) {
-
-            ErrorPrint(roots, test_num);
-            return false;
-        }
-    } else if (TESTS[test_num].roots.number_of_roots == 1) {   // если корень один
-        if (!((CompareDoubles(roots->x1, TESTS[test_num].roots.x1) || CompareDoubles(roots->x2, TESTS[test_num].roots.x1)) &&
-             roots->number_of_roots == 1)){
-
-            ErrorPrint(roots, test_num);
-            return false;
-        }
-    } else if (TESTS[test_num].roots.number_of_roots == Inf) { // если корней бесконечность
-        if (roots->number_of_roots != Inf) {
-
-            ErrorPrint(roots, test_num);
-            return false;
-        }
-    } else { // вариант когда корней нет (но через элзе)
-        if ((roots->number_of_roots) != 0) {
-
-            ErrorPrint(roots, test_num);
-            return false;
-        }
-    }
-
-    return true;
-    */
 }
 
-void ErrorPrint(const Roots *roots, int test_num) { // TODO: const COMPLETED
+void ErrorPrint(const Roots *roots, int test_num) {
 
     assert(roots != NULL);
 
