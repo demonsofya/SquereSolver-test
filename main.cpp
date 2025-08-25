@@ -8,7 +8,7 @@
 #include "isflag.h"
 
 
-int main(int argc, char *argv[]) {
+int main(int argc, const char *argv[]) {
 
     int flag = IsFlag(argc, argv);
 
@@ -16,16 +16,27 @@ int main(int argc, char *argv[]) {
         return Test();
     if (flag == 'h')
         return Help();
+    if (flag == 'E')
+        return 0;
 
-    Coeffs input_coeffs = {NAN, NAN, NAN};
-    Roots solved_roots = {NAN, NAN, 0}; 
-    Test(); 
+    int c;
 
-    Scan(&input_coeffs);
+    // TODO: what if flag is incorrect?
+    while(true) {
+        Coeffs input_coeffs = {NAN, NAN, NAN}; // TODO: ask once more
+        Roots solved_roots = {NAN, NAN, 0};
 
-    solved_roots.number_of_roots = SqrEq(&input_coeffs, &solved_roots);
+        Scan(&input_coeffs);
 
-    Print(&solved_roots);
+        solved_roots.number_of_roots = SqrEq(&input_coeffs, &solved_roots);
+
+        Print(&solved_roots);
+
+        printf("\nDo you want to continue? y/n\n");
+        if ((c = getchar()) != 'y')
+            return 0;
+        printf("\n");
+    }
 
     return 0;
 }

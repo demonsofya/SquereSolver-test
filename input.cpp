@@ -7,7 +7,7 @@
 
 int Scan(Coeffs *coeffs) {
 
-    assert (coeffs != NULL);
+    assert(coeffs != NULL);
 
     printf("The quadratic equation solver\n");
     printf("Enter three number: \n");
@@ -23,7 +23,7 @@ int Scan(Coeffs *coeffs) {
 
         if (ReadenCount != 3 || !(NewSimbol == EOF || isspace(NewSimbol))) {
 
-            scanf ("%*[^\n]");
+            scanf("%*[^\n]");
             printf("Try again\n");
             continue;
 
