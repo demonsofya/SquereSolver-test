@@ -1,5 +1,5 @@
 #include <string.h>
-# include <stdlib.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
@@ -8,9 +8,12 @@
 #include "isflag.h"
 #include "test.h"
 
+// TODO: move to .h
+
+
 //int lol(double a, double *b);
 
-int IsFlag(int argc, const char **argv) {
+Flags IsFlag(int argc, const char **argv) {
 
     // int (*kek)(double, double *) = lol; // объ€вление укзател€ на фукнцию
 
@@ -21,7 +24,7 @@ int IsFlag(int argc, const char **argv) {
     assert(argv);
 
     if (argc == 1)
-        return '\0';
+        return NO_FLAG;
 
     // argc == 1? если да, делаем обычну. программу
 
@@ -32,12 +35,12 @@ int IsFlag(int argc, const char **argv) {
     PtrToFlagFunction *FlagsArray = (PtrToFlagFunction *) calloc(argc - 1, sizeof(PtrToFlagFunction));  //выделение куска пам€ти на массив флагинфо
     //FlagsArray = {};
 
-    unsigned int flags_size = (sizeof(FLAGS_INFO)) / (sizeof(const char *) + (sizeof(const char *) + sizeof(PtrToFlagFunction)));
+    unsigned int flags_size = sizeof(FLAGS_INFO) / sizeof(FlagInfo);
     //  есть флаг, который смотрит error ->  если есть, освобождаем массив, печатем ошибку, выходим
-    int iserror_large = 1;
-    int iserror_small = 0;
+    bool is_error = true; // TODO: remove large
+    //bool iserror_small = false;// TODO: remove small
     // счетчик на последний свободный элемент в массиве
-    int last_flag = 0;
+    int scanned_flags_counter = 0;  // scanned_flags_counter
     // кладу указатели на функции в массив
     // обхожу его второй раз еслинет ошибок. вызываю функции
     //free(a);  // освобождение пам€ти
@@ -48,7 +51,7 @@ int IsFlag(int argc, const char **argv) {
 
     for (int i = 1; i < argc; i++) {   // argv[1]
         // обход массива структур на сравнение с флагами
-        iserror_small = 0;
+        is_error = true;
 
         for (unsigned int j = 0; j < flags_size; j++) {
 
@@ -57,14 +60,19 @@ int IsFlag(int argc, const char **argv) {
             assert(FLAGS_INFO[j].long_name);
 
             if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) || (strcmp(argv[i], FLAGS_INFO[j].long_name) == 0)) {
-                iserror_small = 1;
-                FlagsArray[last_flag] = FLAGS_INFO[j].pointer;
-                last_flag++;
-            }
 
+                is_error = false;
+                FlagsArray[scanned_flags_counter++] = FLAGS_INFO[j].pointer;
+            }
         }
 
-        iserror_large *= iserror_small;
+        if (is_error) {
+            printf("ERRROR THE THING YOU JUST INTPUTED IS NOT A FLAG AAAAAAAA");
+            free(FlagsArray);
+
+            return FLAGS_SCAN_ERROR;
+        }
+
 
         //if ((strcmp(argv[i], "-t") == 0) || (strcmp(argv[i], "--test") == 0))
         //    return 't';
@@ -76,24 +84,16 @@ int IsFlag(int argc, const char **argv) {
         //return 'E';
     }
 
-    if (!iserror_large) {
-
-            printf("ERRROR THE THING YOU JUST INTPUTED IS NOT A FLAG AAAAAAAA");
-            free(FlagsArray);
-            return 'E';
-
-    }
-
-
-    for (int j = 0; j < last_flag; j++) {
+    for (int j = 0; j < scanned_flags_counter; j++) {
 
         assert(FlagsArray[j]);
-        FlagsArray[j]();
 
+        FlagsArray[j]();
     }
 
     free(FlagsArray);
-    return 'F';
+
+    return FLAGS_SCAN_SUCCESS;
 }
 
 int Help(void) {
