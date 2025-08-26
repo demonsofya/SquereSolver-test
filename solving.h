@@ -1,26 +1,36 @@
+/*!
+\file
+\brief Файл с функциями решения уравнения
+
+Содержит определение структуру количества корней,
+структуру коэффициентов, структуру корней
+
+Есть функция решения универсальная, квадратного уравнения, линейного уравнения
+*/
 #ifndef SOLVING_H_INCLUDED
 #define SOLVING_H_INCLUDED
 
 /// Список констант - количество корней
 enum NumberOfRoots { //camel case   GetUserInput // структуры, енамы, функции
-    Inf = -1,        //snake case   get_user_input // локальные перменные, аргументы фнкциии
-    NoRoots = 0,
-    OneRoot = 1,
-    TwoRoots = 2
+    Inf = -1, ///< Бесконечное количество корней
+    //snake case   get_user_input // локальные перменные, аргументы фнкциии
+    NoRoots = 0, ///< Нет корней
+    OneRoot = 1, ///< Один корень
+    TwoRoots = 2 ///< Два корня
 };
 
 /// Коэфф. уравнения
 struct Coeffs {
-    double a;
-    double b;
-    double c;
+    double a;  ///< Коэффициент при члене второй степени
+    double b;  ///< Коэффициент при члене первой степени
+    double c;  ///< Свободный коэффициент
 };
 
 /// Корни + количество корней
 struct Roots {
-    double x1;
-    double x2;
-    NumberOfRoots number_of_roots;
+    double x1; ///< Первый корень
+    double x2; ///< Второй корень
+    NumberOfRoots number_of_roots;  ///< Количество корней
 };
 
 /// Функция для решения линейного уравнения

@@ -1,9 +1,16 @@
+/*!
+\file
+\brief Файл с математическими функциями
+
+Содержит функцию сравнения даблов и константу точности
+*/
 #ifndef MATHEMATICS_H_INCLUDED
 #define MATHEMATICS_H_INCLUDED
 
 /// Точность функции сравнения даблов
 const double EPS = 0.001;
 
+// TODO: the same
 /// Функция для сравнения двух даблов
 bool CompareDoubles(double a, double b);
 

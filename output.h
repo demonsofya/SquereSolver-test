@@ -1,3 +1,9 @@
+/*!
+\file
+\brief Файл с функциями вывода
+
+Содержит функцию вывода корней
+*/
 #ifndef OUTPUT_H_INCLUDED
 #define OUTPUT_H_INCLUDED
 

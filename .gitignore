@@ -4,3 +4,6 @@
 *.html
 *.png
 *.js
+doxygen.*
+html
+latex

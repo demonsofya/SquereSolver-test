@@ -54,14 +54,33 @@ int Test(void) {
 
     // TODO: getNumberOfUnitTests(FILE *)
 
+    //UnitTest lol[2] = {};
+
     FILE *fp = NULL;
     fp = fopen("UnitTests.txt", "r");
     assert(fp);
 
     size_t num_of_tests = GetNumberOfUnitTests(fp);
 
+    //UnitTest** tests = (UnitTest **) calloc(num_of_tests, sizeof(UnitTest *));
     UnitTest* tests = (UnitTest *) calloc(num_of_tests, sizeof(UnitTest));
     assert(tests);
+
+    /* tests[i]->coeffs.a
+    *UnitTest
+    UnteTest -> coeffs = (*UnitTest).coeffs
+
+    int a[4] = {};
+    a[2]
+    *(a + 2)
+
+
+    (int *)((size_t) b + 1 * sizeof(int *))
+
+    |    |    |    |    |    |
+
+    |1000| 2343 |    |   |
+    */
 
     fseek(fp, 0, SEEK_SET);
 
@@ -70,15 +89,6 @@ int Test(void) {
     fclose(fp);
 
     for (size_t test_num = 0; test_num < num_of_tests; test_num++) {
-
-        //assert(tests[test_num].coeffs.a);
-        //assert(tests[test_num].coeffs.b);
-        //assert(tests[test_num].coeffs.c);
-
-        //assert(tests[test_num].roots.x1);
-        //assert(tests[test_num].roots.x2);
-        //assert(tests[test_num].roots.number_of_roots);
-
         coeffs = tests[test_num].coeffs;
 
         roots.number_of_roots = SqrEq(&coeffs, &roots);

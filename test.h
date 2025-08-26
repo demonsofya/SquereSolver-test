@@ -1,3 +1,11 @@
+/*!
+\file
+\brief Файл с функциями UnitTest
+
+Содержит определение структуры UnitTest,
+функцию вызова тестирования, функцию проверки правильности корней,
+Две функции для заполнения массива из файла
+*/
 #ifndef TEST_H_INCLUDED
 #define TEST_H_INCLUDED
 
@@ -5,11 +13,10 @@
 
 /// Структура, хранящая одно уравнение
 struct UnitTest {
-    Coeffs coeffs;
-    Roots roots;
+    Coeffs coeffs; ///< Коэффициенты уравнения
+    Roots roots;   ///< Корни уравнения
 };
 
-/// Массив существующих тестов
 /*UnitTest TESTS[6] =
 {
         //coeffs        //roots
@@ -21,8 +28,10 @@ struct UnitTest {
     {   {1, -12, 36},   {6, 6, 1}   },
 };*/
 
+/// Заполняет массив UnitTest из файла
 void FillUnitTests(FILE *fp, UnitTest *tests, size_t num_of_tests);
 
+/// Возвращает количество строк в файле
 size_t GetNumberOfUnitTests(FILE *fp);
 
 /// Запускает тест

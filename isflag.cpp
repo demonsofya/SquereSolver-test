@@ -25,16 +25,15 @@ Flags IsFlag(int argc, const char **argv) {
 
     //void* calloc(size_t NumOfElements, size_t SizeOfOneElement//выдеение куска памяти
 
-
     PtrToFlagFunction *FlagsArray = (PtrToFlagFunction *) calloc(argc - 1, sizeof(PtrToFlagFunction));  //выделение куска памяти на массив флагинфо
 
-    unsigned int flags_size = sizeof(FLAGS_INFO) / sizeof(FlagInfo);
+    size_t flags_size = sizeof(FLAGS_INFO) / sizeof(FlagInfo);
 
     bool is_error = true; // TODO: remove large
 
     int scanned_flags_counter = 0;
 
-    for (int i = 1; i < argc; i++) {
+    for (size_t i = 1; i < (size_t) argc; i++) {
         // обход массива структур на сравнение с флагами
         is_error = true;
 
