@@ -3,6 +3,7 @@
 
 #include "solving.h"
 
+/// Ввод коэффециентов уравнения
 int Scan(Coeffs *coeffs);
 
 #endif // INPUT_H_INCLUDED

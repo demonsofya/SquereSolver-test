@@ -3,6 +3,7 @@
 
 #include "solving.h"
 
+/// Вывод решения уравнения
 int Print(const Roots *roots);
 
 #endif // OUTPUT_H_INCLUDED

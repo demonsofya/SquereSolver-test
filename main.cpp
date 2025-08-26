@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+//#include <TXLib.h>
 
 #include "test.h"
 #include "input.h"
@@ -12,14 +13,8 @@ int main(int argc, const char *argv[]) {
 
     int flag = IsFlag(argc, argv);
 
-    if (flag == 't')
-        return Test();
-    if (flag == 'h')
-        return Help();
-    if (flag == 'E')
+    if (flag == 'F' || flag == 'E')
         return 0;
-
-    int c;
 
     // TODO: what if flag is incorrect?
     while(true) {
@@ -32,9 +27,13 @@ int main(int argc, const char *argv[]) {
 
         Print(&solved_roots);
 
+        int symbol = 0;
+
         printf("\nDo you want to continue? y/n\n");
-        if ((c = getchar()) != 'y')
+
+        if ((symbol = getchar()) != 'y')
             return 0;
+
         printf("\n");
     }
 
