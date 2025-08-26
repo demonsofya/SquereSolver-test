@@ -1,0 +1,412 @@
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x773FE609 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\WINDOWS\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x32EC (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x773FE609 in C:\WINDOWS\System32\msvcrt.dll: strcmp()
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:07:50, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:08:00
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x773FE609 в функции strcmp(). Попытка прочесть данные по адресу NULL в модуле C:\WINDOWS\System32\msvcrt.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x32EC (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x773FE609 in C:\WINDOWS\System32\msvcrt.dll: strcmp()
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:07:50, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:08:00
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe, файл: isflag.cpp, строка: 82, функция: int IsFlag(int, const char**),
+
+Сообщение: ВНЕЗАПНО: Логическая ошибка: Неверно, что "FlagsArray[j]".
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x1A8 (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045BC3B in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: IsFlag() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp:82:
+
+     80:     for (int j = 0; j <= last_flag; j++) {
+     81: 
+=>   82:         assert(FlagsArray[j]);
+     83:         FlagsArray[j]();
+     84: 
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:14:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:14:10
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: Исключение С++, вызванное оператором throw.
+
+#1: Исключение EXCEPTION_CPP_MSC (0xE06D7363) при выполнении кода по адресу 0x756D0714 в функции RaiseException() в модуле C:\WINDOWS\System32\KERNELBASE.dll. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+Ой, всё (EXCEPTION_NONCONTINUABLE).
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x1A8 (Main), GetLastError(): 298 (Слишком много попыток занесения события для семафора). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x756D0714 in C:\WINDOWS\System32\KERNELBASE.dll: RaiseException()
+# 1 0x773AB34D in C:\WINDOWS\System32\msvcrt.dll: CxxThrowException()
+#12 0x774E82EB in C:\WINDOWS\System32\USER32.dll: IsWindowUnicode()
+#13 0x774E4BE9 in C:\WINDOWS\System32\USER32.dll: GetWindowThreadProcessId()
+#14 0x774E4B17 in C:\WINDOWS\System32\USER32.dll: GetWindowThreadProcessId()
+#15 0x77B5BF16 in C:\WINDOWS\SYSTEM32\ntdll.dll: KiUserCallbackDispatcher()
+#16 0x774E31A1 in C:\WINDOWS\System32\USER32.dll: PeekMessageW()
+#17 0x7751A7DC in C:\WINDOWS\System32\USER32.dll: EndDialog()
+#18 0x7751AD14 in C:\WINDOWS\System32\USER32.dll: EndDialog()
+#19 0x7753B983 in C:\WINDOWS\System32\USER32.dll: SoftModalMessageBox()
+#20 0x7753A712 in C:\WINDOWS\System32\USER32.dll: DrawStateW()
+#21 0x7753B217 in C:\WINDOWS\System32\USER32.dll: MessageBoxTimeoutW()
+#22 0x7753B285 in C:\WINDOWS\System32\USER32.dll: MessageBoxW()
+#23 0x0044A10A in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: (anonymous namespace)::TX::txMessageBox() at c:/users/sonya/код блок от деда/codeblocks/mingw/include/txlib.h:12913
+#24 0x00449E66 in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: (anonymous namespace)::TX::_txProcessError() at c:/users/sonya/код блок от деда/codeblocks/mingw/include/txlib.h:12811
+#25 0x0043FC16 in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: (anonymous namespace)::TX::_txError() at c:/users/sonya/код блок от деда/codeblocks/mingw/include/txlib.h:11090
+
+#26 0x0045BC3B in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: IsFlag() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp:82:
+
+     80:     for (int j = 0; j <= last_flag; j++) {
+     81: 
+=>   82:         assert(FlagsArray[j]);
+     83:         FlagsArray[j]();
+     84: 
+
+#27 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Стек вызовов TX:
+
+# 0 in int {anonymous}::TX::txMessageBox(const char*, const char*, unsigned int) at c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h:12912:
+
+  12910: 
+  12911: $   HWND wnd = _txCanvas_Window;
+=>12912: $   int  ret = MessageBoxW ((wnd && IsWindowVisible (wnd))? wnd : _TX_CALL (Win32::GetConsoleWindow,()),
+  12913:                             textW, headerW, flags | MB_SETFOREGROUND | MB_TOPMOST);
+  12914: 
+
+# 1 in const char* {anonymous}::TX::_txProcessError(const char*, int, const char*, unsigned int, const char*, va_list) at c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h:12748:
+
+  12746:                                  what);
+  12747:     if (stkTrace)
+=>12748:         {$ fprintf (stderr, "\n" "--------------------------------------------------\n"
+  12749:                                  "Стек вызовов:\n\n"
+  12750:                                  "%s\n\n"
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:14:00, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:14:11
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045BB91 в функции IsFlag() в файле C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp на строке 54. Попытка записать данные по адресу NULL в модуле C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x56D8 (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045BB91 in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: IsFlag() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp:54:
+
+     52:             if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) || (strcmp(argv[i], FLAGS_INFO[j].long_name) == 0)) {
+     53:                 iserror = 0;
+=>   54:                 FlagsArray[last_flag] = FLAGS_INFO[j].pointer;
+     55:                 last_flag++;
+     56:             }
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:16:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:16:42
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045BB91 в функции IsFlag() в файле C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp на строке 54. Попытка записать данные по адресу NULL в модуле C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x56D8 (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045BB91 in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: IsFlag() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp:54:
+
+     52:             if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) || (strcmp(argv[i], FLAGS_INFO[j].long_name) == 0)) {
+     53:                 iserror = 0;
+=>   54:                 FlagsArray[last_flag] = FLAGS_INFO[j].pointer;
+     55:                 last_flag++;
+     56:             }
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:16:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:16:43
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib предупреждает:
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045BB91 в функции IsFlag() в файле C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp на строке 54. Попытка записать данные по адресу NULL в модуле C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+#1: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x3578 (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045BB91 in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: IsFlag() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp:54:
+
+     52:             assert(argv[i]);
+     53:             assert(FLAGS_INFO[j].short_name);
+=>   54:             assert(FLAGS_INFO[j].long_name);
+     55: 
+     56:             if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) || (strcmp(argv[i], FLAGS_INFO[j].long_name) == 0)) {
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:16:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:19:14
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------
+
+--------------------------------------------------
+TXLib соболезнует...
+
+Программа: C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe,
+
+ВНЕЗАПНО: signal (11, 0x00): SIGSEGV: Доступ по неверному указателю. Ставьте ассерты! 
+
+Нарушение доступа к памяти.
+
+#1: Исключение EXCEPTION_ACCESS_VIOLATION (0xC0000005) при выполнении кода по адресу 0x0045BB91 в функции IsFlag() в файле C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp на строке 54. Попытка записать данные по адресу NULL в модуле C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe. Спасибо _txVectoredExceptionHandler(), что сообщил. Люблю его <3
+
+С помощью функции signal() вы можете сами обработать эту ошибку.
+
+#2: TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400], Instance: 0x0057D65C (32-bit), Flags: Cmdre0, Thread: 0x3578 (Main), GetLastError(): 126 (Не найден указанный модуль). 
+
+--------------------------------------------------
+Стек вызовов:
+
+# 0 0x0045BB91 in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: IsFlag() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/isflag.cpp:54:
+
+     52:             assert(argv[i]);
+     53:             assert(FLAGS_INFO[j].short_name);
+=>   54:             assert(FLAGS_INFO[j].long_name);
+     55: 
+     56:             if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) || (strcmp(argv[i], FLAGS_INFO[j].long_name) == 0)) {
+
+# 1 0x0042D8FA in C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe: main() at C:/Users/sonya/OneDrive/Documentos/GitHub/SquereSolver-test/main.cpp:14:
+
+     12: int main(int argc, const char *argv[]) {
+     13: 
+=>   14:     int flag = IsFlag(argc, argv);
+     15: 
+     16:     if (flag == 'F' || flag == 'E')
+
+--------------------------------------------------
+Developed with:
+
+The Dumb Artist Library (TX Library)
+TXLib [Ver: 00173a, Rev: 174, Date: 2025-08-17 06:00:49 +0400]
+Copyright (C) Ded (Ilya Dedinsky, http://txlib.ru) <mail@txlib.ru>
+See license on: http://txlib.ru
+
+TXLib file:	c:\users\sonya\код блок от деда\codeblocks\mingw\include\txlib.h
+Compiled:	Aug 26 2025 11:16:33, GNU g++ 4.8.1, std=201103L, MinGW Runtime 3.20, 32-bit, DEBUG
+Started:	Aug 26 2025 11:19:14
+
+Run file:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test\SquareEqualation.exe
+Directory:	C:\Users\sonya\OneDrive\Documentos\GitHub\SquereSolver-test
+
+--------------------------------------------------

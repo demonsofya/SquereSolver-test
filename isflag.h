@@ -3,6 +3,12 @@
 
 #include "test.h"
 
+enum Flags {
+  FLAGS_SCAN_ERROR,
+  FLAGS_SCAN_SUCCESS,
+  NO_FLAG
+};
+
 typedef int(*PtrToFlagFunction)(void);
 
 /// Выводит справку
@@ -26,6 +32,6 @@ const FlagInfo FLAGS_INFO[] = {
 
 
 /// Функция проверяет, являются ли введенные символы флагом
-int IsFlag(int argc, const char *argv[]);
+Flags IsFlag(int argc, const char *argv[]);
 
 #endif // ISFLAG_H_INCLUDED

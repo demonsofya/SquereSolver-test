@@ -2,11 +2,11 @@
 #include <assert.h>
 #include <math.h>
 
-#include "mathematics.h"
 #include "solving.h"
+#include "mathematics.h"
 
-
-int Linear(const Coeffs *coeffs, Roots *roots) {
+// TODO: return type - enum
+NumberOfRoots Linear(const Coeffs *coeffs, Roots *roots) {
 
     assert (roots != NULL);
     assert (coeffs != NULL);
@@ -23,7 +23,7 @@ int Linear(const Coeffs *coeffs, Roots *roots) {
     return OneRoot;
 }
 
-int Quadr(const Coeffs *coeffs, Roots *roots) {
+NumberOfRoots Quadr(const Coeffs *coeffs, Roots *roots) {
 
     assert (roots != NULL);
     assert (coeffs != NULL);
@@ -45,7 +45,7 @@ int Quadr(const Coeffs *coeffs, Roots *roots) {
     return TwoRoots;
 }
 
-int SqrEq(const Coeffs *coeffs, Roots *roots) { /* function for solving squere equation */
+NumberOfRoots SqrEq(const Coeffs *coeffs, Roots *roots) { /* function for solving squere equation */
 
     assert (roots != NULL);
     assert (coeffs != NULL);      /* asserts */

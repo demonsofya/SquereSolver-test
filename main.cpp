@@ -2,7 +2,6 @@
 #include <math.h>
 //#include <TXLib.h>
 
-#include "test.h"
 #include "input.h"
 #include "output.h"
 #include "solving.h"
@@ -11,15 +10,15 @@
 
 int main(int argc, const char *argv[]) {
 
-    int flag = IsFlag(argc, argv);
+    Flags flag = IsFlag(argc, argv);// TODO: fix return value
 
-    if (flag == 'F' || flag == 'E')
+    if (flag == FLAGS_SCAN_ERROR || flag == FLAGS_SCAN_SUCCESS)
         return 0;
 
     // TODO: what if flag is incorrect?
     while(true) {
         Coeffs input_coeffs = {NAN, NAN, NAN}; // TODO: ask once more
-        Roots solved_roots = {NAN, NAN, 0};
+        Roots solved_roots = {NAN, NAN, NoRoots};
 
         Scan(&input_coeffs);
 

@@ -2,8 +2,8 @@
 #define SOLVING_H_INCLUDED
 
 /// Список констант - количество корней
-enum ROOTS {
-    Inf = -1,
+enum NumberOfRoots { //camel case   GetUserInput // структуры, енамы, функции
+    Inf = -1,        //snake case   get_user_input // локальные перменные, аргументы фнкциии
     NoRoots = 0,
     OneRoot = 1,
     TwoRoots = 2
@@ -20,16 +20,16 @@ struct Coeffs {
 struct Roots {
     double x1;
     double x2;
-    int number_of_roots;
+    NumberOfRoots number_of_roots;
 };
 
 /// Функция для решения линейного уравнения
-int Linear(const Coeffs *coeffs, Roots *roots);
+NumberOfRoots Linear(const Coeffs *coeffs, Roots *roots);
 
 /// Фукнция для решения квадратного уравнения
-int Quadr(const Coeffs *coeffs, Roots *roots);
+NumberOfRoots Quadr(const Coeffs *coeffs, Roots *roots);
 
 /// Универсальная решалка
-int SqrEq(const Coeffs *coeffs, Roots *roots);
+NumberOfRoots SqrEq(const Coeffs *coeffs, Roots *roots);
 
 #endif // SOLVING_H_INCLUDED
