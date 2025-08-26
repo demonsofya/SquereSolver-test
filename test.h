@@ -21,29 +21,6 @@ struct UnitTest {
     {   {1, -12, 36},   {6, 6, 1}   },
 };*/
 
-//unsigned int UnitTestFile(void);
-
-
-//UnitTest TESTS[6] = {};
-
-/*unsigned int UnitTestFile(void) {
-
-    FILE *fp;
-    fp = fopen("UnitTests.txt", "r");
-    double a, b, c;
-    double x1, x2;
-    int nRoots;
-    unsigned int lines_count = 0;
-    while(fscanf(fp, "%lf %lf %lf %lf %lf %d", &a, &b, &c, &x1, &x2, &nRoots) != EOF) {
-        TESTS[lines_count].coeffs = {a, b, c};
-        TESTS[lines_count].roots = {x1, x2, nRoots};
-        lines_count++;
-    }
-    fclose(fp);
-
-    return lines_count;
-} */
-
 void FillUnitTests(FILE *fp, UnitTest *tests, size_t num_of_tests);
 
 size_t GetNumberOfUnitTests(FILE *fp);

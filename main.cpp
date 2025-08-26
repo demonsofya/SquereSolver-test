@@ -10,14 +10,13 @@
 
 int main(int argc, const char *argv[]) {
 
-    Flags flag = IsFlag(argc, argv);// TODO: fix return value
+    Flags flag = IsFlag(argc, argv);
 
     if (flag == FLAGS_SCAN_ERROR || flag == FLAGS_SCAN_SUCCESS)
         return 0;
 
-    // TODO: what if flag is incorrect?
     while(true) {
-        Coeffs input_coeffs = {NAN, NAN, NAN}; // TODO: ask once more
+        Coeffs input_coeffs = {NAN, NAN, NAN};
         Roots solved_roots = {NAN, NAN, NoRoots};
 
         Scan(&input_coeffs);

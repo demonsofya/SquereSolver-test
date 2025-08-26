@@ -7,25 +7,16 @@
 #include "solving.h"
 #include "test.h"
 
-//UnitTest TESTS[6] = {}; -- // TODO: remove
-
 void FillUnitTests(FILE *fp, UnitTest *tests, size_t num_of_tests) {
 
     assert(fp);
-
-    //FILE *fp = NULL;
-    //fp = fopen("UnitTests.txt", "r");
 
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
     NumberOfRoots nRoots = NoRoots;
     // fseek - return to very beginning
 
-    /*while(fscanf(fp, "%*[^\n]%*c") != EOF) {
-        num_of_tests++;
-    } */
 
-    // calloc (lines_number, sizeof(...))
     // -------- UnitTest TESTS[lines_number] = {}; -- STOP!!!
 
     for (size_t i = 0; i < num_of_tests; i++) {
@@ -34,7 +25,6 @@ void FillUnitTests(FILE *fp, UnitTest *tests, size_t num_of_tests) {
         tests[i].coeffs = {a, b, c};
         tests[i].roots = {x1, x2, nRoots};
 
-        //printf("%lf %lf %lf %lf %lf %d\n", a, b, c, x1, x2, nRoots);
     }
 }
 
@@ -50,25 +40,6 @@ size_t GetNumberOfUnitTests(FILE *fp) {
 
     return num_of_tests;
 }
-
-/*unsigned int UnitTestFile(void) {
-    UnitTest TESTS[6];
-
-    FILE *fp;
-    fp = fopen("UnitTests.txt", "r");
-    double a, b, c;
-    double x1, x2;
-    int nRoots;
-    unsigned int lines_count = 0;
-    while(fscanf(fp, "%lf %lf %lf %lf %lf %d", &a, &b, &c, &x1, &x2, &nRoots) != EOF) {
-        TESTS[lines_count].coeffs = {a, b, c};
-        TESTS[lines_count].roots = {x1, x2, nRoots};
-        lines_count++;
-    }
-    fclose(fp);
-
-    return lines_count;
-} */
 
 int Test(void) {
 
@@ -88,19 +59,15 @@ int Test(void) {
     assert(fp);
 
     size_t num_of_tests = GetNumberOfUnitTests(fp);
-    //printf("%d\n", num_of_tests); // это оно правильно делает, победа
 
     UnitTest* tests = (UnitTest *) calloc(num_of_tests, sizeof(UnitTest));
     assert(tests);
 
     fseek(fp, 0, SEEK_SET);
-    // TODO: fillUnitTests(FILE *, UnitTest *, size_t num_tests)
+
     FillUnitTests(fp, tests, num_of_tests);
 
-    // fclose()
     fclose(fp);
-
-    // TODO: remove unsigned int amount_of_tests = UnitTestFile();
 
     for (size_t test_num = 0; test_num < num_of_tests; test_num++) {
 
@@ -112,7 +79,7 @@ int Test(void) {
         //assert(tests[test_num].roots.x2);
         //assert(tests[test_num].roots.number_of_roots);
 
-        coeffs = tests[test_num].coeffs;   // TODO: TESTS to tests
+        coeffs = tests[test_num].coeffs;
 
         roots.number_of_roots = SqrEq(&coeffs, &roots);
 

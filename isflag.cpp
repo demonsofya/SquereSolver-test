@@ -8,9 +8,6 @@
 #include "isflag.h"
 #include "test.h"
 
-// TODO: move to .h
-
-
 //int lol(double a, double *b);
 
 Flags IsFlag(int argc, const char **argv) {
@@ -26,30 +23,18 @@ Flags IsFlag(int argc, const char **argv) {
     if (argc == 1)
         return NO_FLAG;
 
-    // argc == 1? если да, делаем обычну. программу
-
     //void* calloc(size_t NumOfElements, size_t SizeOfOneElement//выдеение куска памяти
 
 
-    // переименовать!!!!!!!!!!!!!
     PtrToFlagFunction *FlagsArray = (PtrToFlagFunction *) calloc(argc - 1, sizeof(PtrToFlagFunction));  //выделение куска памяти на массив флагинфо
-    //FlagsArray = {};
 
     unsigned int flags_size = sizeof(FLAGS_INFO) / sizeof(FlagInfo);
-    //  есть флаг, который смотрит error ->  если есть, освобождаем массив, печатем ошибку, выходим
+
     bool is_error = true; // TODO: remove large
-    //bool iserror_small = false;// TODO: remove small
-    // счетчик на последний свободный элемент в массиве
-    int scanned_flags_counter = 0;  // scanned_flags_counter
-    // кладу указатели на функции в массив
-    // обхожу его второй раз еслинет ошибок. вызываю функции
-    //free(a);  // освобождение памяти
-    // каллок зануляет память автоматически, маллок нет
-    //|   |   |    |    |    |   |
 
-    // | heap | stack memory |
+    int scanned_flags_counter = 0;
 
-    for (int i = 1; i < argc; i++) {   // argv[1]
+    for (int i = 1; i < argc; i++) {
         // обход массива структур на сравнение с флагами
         is_error = true;
 
@@ -73,15 +58,6 @@ Flags IsFlag(int argc, const char **argv) {
             return FLAGS_SCAN_ERROR;
         }
 
-
-        //if ((strcmp(argv[i], "-t") == 0) || (strcmp(argv[i], "--test") == 0))
-        //    return 't';
-        //
-        //if ((strcmp(argv[i], "-h") == 0) || (strcmp(argv[i], "--help") == 0))
-        //    return 'h';
-
-        //printf("ERRROR THE THING YOU JUST INTPUTED IS NOT A FLAG AAAAAAAA");
-        //return 'E';
     }
 
     for (int j = 0; j < scanned_flags_counter; j++) {

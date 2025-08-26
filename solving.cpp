@@ -5,7 +5,6 @@
 #include "solving.h"
 #include "mathematics.h"
 
-// TODO: return type - enum
 NumberOfRoots Linear(const Coeffs *coeffs, Roots *roots) {
 
     assert (roots != NULL);

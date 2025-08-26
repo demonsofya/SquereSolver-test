@@ -28,8 +28,6 @@ const FlagInfo FLAGS_INFO[] = {
     {"-h", "--help", Help},  /// Запуск справки
 };
 
-// TODO: array of structs FlagInfo with flags
-
 
 /// Функция проверяет, являются ли введенные символы флагом
 Flags IsFlag(int argc, const char *argv[]);
