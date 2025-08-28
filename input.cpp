@@ -4,10 +4,13 @@
 
 #include "solving.h"
 #include "input.h"
+#include "Errors.h"
 
-int Scan(Coeffs *coeffs) {
 
-    assert(coeffs != NULL);
+Errors Scan(Coeffs *coeffs) {
+
+    //assert(coeffs != NULL);
+    ASSERT_ERROR(coeffs, __FILE__);
 
     printf("The quadratic equation solver\n");
     printf("Enter three number: \n");
@@ -29,8 +32,8 @@ int Scan(Coeffs *coeffs) {
 
         }
 
-        return 1;
+        return NoError;
     }
 
-    return 0;
+    return InputFuncError;
 }

@@ -6,34 +6,39 @@
 #include "output.h"
 #include "solving.h"
 #include "isflag.h"
+#include "Errors.h"
 
+// TODO: file errors.h with enum Errors {}
+// TODO: macros CHECK_ERROR, RETURN_ERROR and RETURN_NO_ERROR
+// TODO:
 
 int main(int argc, const char *argv[]) {
 
-    Flags flag = IsFlag(argc, argv);
+    Flags flag = NO_FLAG;
+    CHECK_ERRORS(IsFlag(argc, argv, &flag));
 
     if (flag == FLAGS_SCAN_ERROR || flag == FLAGS_SCAN_SUCCESS)
-        return 0;
+        return int(NoError);
 
     while(true) {
         Coeffs input_coeffs = {NAN, NAN, NAN};
         Roots solved_roots = {NAN, NAN, NoRoots};
 
-        Scan(&input_coeffs);
+        CHECK_ERRORS(Scan(&input_coeffs));
 
-        solved_roots.number_of_roots = SqrEq(&input_coeffs, &solved_roots);
+        CHECK_ERRORS(SqrEq(&input_coeffs, &solved_roots));
 
-        Print(&solved_roots);
+        CHECK_ERRORS(Print(&solved_roots));
 
         int symbol = 0;
 
         printf("\nDo you want to continue? y/n\n");
 
         if ((symbol = getchar()) != 'y')
-            return 0;
+            return int(NoError);
 
         printf("\n");
     }
 
-    return 0;
+    return int(NoError);
 }

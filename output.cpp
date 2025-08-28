@@ -4,10 +4,14 @@
 
 #include "solving.h"
 #include "output.h"
+#include "Errors.h"
 
-int Print(const Roots *roots) {
+Errors Print(const Roots *roots) {
 
-    assert(roots != NULL);
+    //roots = NULL; //УБРАТЬ ЭТО ДЛЯ ПРОВЕРКИ -> output работает. до мейна дошел
+
+    //assert(roots != NULL);
+    ASSERT_ERROR(roots, __FILE__);
 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 
@@ -29,11 +33,11 @@ int Print(const Roots *roots) {
             break;
         default:
             printf ("Error");
-            return 1;
+            return OutputFuncError;
     }
 
     SetConsoleTextAttribute(hConsole,
     FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED);
 
-    return 0;
+    return NoError;
 }

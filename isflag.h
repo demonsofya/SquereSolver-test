@@ -11,6 +11,7 @@
 #define ISFLAG_H_INCLUDED
 
 #include "test.h"
+#include "Errors.h"
 
 /// Enum типа флага
 enum Flags {
@@ -19,10 +20,12 @@ enum Flags {
   NO_FLAG  ///< Флагов не было
 };
 
-typedef int(*PtrToFlagFunction)(void);
+typedef Errors(*PtrToFlagFunction)(void);
 
 /// Выводит справку
-int Help(void);
+///
+/// \return NoError если все прошло успешно, IsflagFuncError в ином случае
+Errors Help(void);
 
 /// Содержит информацию о флагах
 struct FlagInfo {
@@ -35,11 +38,17 @@ struct FlagInfo {
 /// Массив существующих флагов
 const FlagInfo FLAGS_INFO[] = {
     {"-t", "--test", Test},  ///< Запуск тестов
-    {"-h", "--help", Help},  ///< Запуск справки
+    {"-h", "--help", Help}    ///< Запуск справки
 };
 
 
 /// Функция проверяет, являются ли введенные символы флагом
-Flags IsFlag(int argc, const char *argv[]);
+///
+/// \param argc Размер массива argv
+/// \param argv указатель на массив введенных строк
+/// \param flag указатель на флаг, в котором храниться прочитан ли флаг
+///
+/// \return NoError, если сканирование прошло успешно, IsflagFuncError в ином случае
+Errors IsFlag(int argc, const char *argv[], Flags *flag);
 
 #endif // ISFLAG_H_INCLUDED

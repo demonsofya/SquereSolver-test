@@ -8,12 +8,13 @@
 #define INPUT_H_INCLUDED
 
 #include "solving.h"
+#include "Errors.h"
 
 /// Ввод коэффециентов уравнения
 ///
 /// \param coeffs Коэффициенты квадратного уравнения
 ///
-/// \return 1, если сканирование прошло успешно, 0 в ином случае
-int Scan(Coeffs *coeffs);
+/// \return NoError, если сканирование прошло успешно, InputFuncError в ином случае
+Errors Scan(Coeffs *coeffs);
 
 #endif // INPUT_H_INCLUDED

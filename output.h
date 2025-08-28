@@ -8,8 +8,13 @@
 #define OUTPUT_H_INCLUDED
 
 #include "solving.h"
+#include "Errors.h"
 
 /// ¬ывод решени€ уравнени€
-int Print(const Roots *roots);
+///
+/// \param roots  орни уравнени€
+///
+/// \return NoError, если сканирование прошло успешно, OutputFuncError в ином случае
+Errors Print(const Roots *roots);
 
 #endif // OUTPUT_H_INCLUDED

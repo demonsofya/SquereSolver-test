@@ -10,6 +10,8 @@
 #ifndef SOLVING_H_INCLUDED
 #define SOLVING_H_INCLUDED
 
+#include "Errors.h"
+
 /// Список констант - количество корней
 enum NumberOfRoots { //camel case   GetUserInput // структуры, енамы, функции
     Inf = -1, ///< Бесконечное количество корней
@@ -34,12 +36,27 @@ struct Roots {
 };
 
 /// Функция для решения линейного уравнения
-NumberOfRoots Linear(const Coeffs *coeffs, Roots *roots);
+///
+/// \param coeffs коэффициенты уравнения
+/// \param roots корни уравнения
+///
+/// \return NoError, если решение прошло успешно, SolvingFuncError иначе
+Errors Linear(const Coeffs *coeffs, Roots *roots);
 
 /// Фукнция для решения квадратного уравнения
-NumberOfRoots Quadr(const Coeffs *coeffs, Roots *roots);
+///
+/// \param coeffs коэффициенты уравнения
+/// \param roots корни уравнения
+///
+/// \return NoError, если решение прошло успешно, SolvingFuncError иначе
+Errors Quadr(const Coeffs *coeffs, Roots *roots);
 
 /// Универсальная решалка
-NumberOfRoots SqrEq(const Coeffs *coeffs, Roots *roots);
+///
+/// \param coeffs коэффициенты уравнения
+/// \param roots корни уравнения
+///
+/// \return NoError, если решение прошло успешно, SolvingFuncError иначе
+Errors SqrEq(const Coeffs *coeffs, Roots *roots);
 
 #endif // SOLVING_H_INCLUDED
