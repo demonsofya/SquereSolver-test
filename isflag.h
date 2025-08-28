@@ -15,9 +15,9 @@
 
 /// Enum типа флага
 enum Flags {
-  FLAGS_SCAN_ERROR, ///< Ошибка
-  FLAGS_SCAN_SUCCESS, ///< Флаг найден
-  NO_FLAG  ///< Флагов не было
+    FLAGS_SCAN_ERROR,   ///< Ошибка
+    FLAGS_SCAN_SUCCESS, ///< Флаг найден
+    NO_FLAG             ///< Флагов не было
 };
 
 typedef Errors(*PtrToFlagFunction)(void);
@@ -38,7 +38,7 @@ struct FlagInfo {
 /// Массив существующих флагов
 const FlagInfo FLAGS_INFO[] = {
     {"-t", "--test", Test},  ///< Запуск тестов
-    {"-h", "--help", Help}    ///< Запуск справки
+    {"-h", "--help", Help}   ///< Запуск справки
 };
 
 

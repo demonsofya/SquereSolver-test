@@ -11,7 +11,7 @@
 Errors FillUnitTests(FILE *fp, UnitTest *tests, size_t num_of_tests) {
 
     //assert(fp);
-    ASSERT_ERROR(fp, __FILE__);
+    ASSERT_ERROR(fp);
 
     double a = NAN, b = NAN, c = NAN;
     double x1 = NAN, x2 = NAN;
@@ -34,8 +34,7 @@ Errors FillUnitTests(FILE *fp, UnitTest *tests, size_t num_of_tests) {
 Errors GetNumberOfUnitTests(FILE *fp, size_t *num_of_tests) {
 
     //assert(fp);
-    if (fp == NULL)
-        return TestFuncError;
+    ASSERT_ERROR(fp);
 
     num_of_tests = 0;
 
@@ -54,18 +53,12 @@ Errors Test(void) {
     Coeffs coeffs = {NAN, NAN, NAN};
 
     //unsigned amount_of_tests = (sizeof(TESTS) / (sizeof(UnitTest)));
-
-    // TODO: FILE *
-
-    // TODO: getNumberOfUnitTests(FILE *)
-
     //UnitTest lol[2] = {};
 
     FILE *fp = NULL;
     fp = fopen("UnitTests.txt", "r");
     //assert(fp);
-    if (fp == NULL)
-        return TestFuncError;
+    ASSERT_ERROR(fp);
 
     size_t num_of_tests = 0;
     RETURN_IF_ERROR(GetNumberOfUnitTests(fp, &num_of_tests));
@@ -122,6 +115,9 @@ Errors IsRootsRight(const Roots *roots, int test_num, UnitTest* tests, bool *is_
 
     //assert(roots);
     //assert(tests);
+    ASSERT_ERROR(roots);
+    ASSERT_ERROR(tests);
+
     if (roots == NULL || tests == NULL)
         return TestFuncError;
 

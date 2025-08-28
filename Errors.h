@@ -5,17 +5,18 @@
 
 /// Ошибки для возрата, под каждый cpp файл
 enum Errors {
+    NoError,           ///< Нет ошибки
     SolvingFuncError,  ///< Ошибка в функции решения
     InputFuncError,    ///< Ошибка в функции ввода
-    IsflagFuncError,    ///< Ошибка в функции проверки флага
-    TestFuncError,      ///< Ошибка в функции UnitTest'ирования
-    OutputFuncError,   ///< Ошибка в функции вывода
-    NoError             ///< Нет ошибки
+    IsflagFuncError,   ///< Ошибка в функции проверки флага
+    TestFuncError,     ///< Ошибка в функции UnitTest'ирования
+    OutputFuncError    ///< Ошибка в функции вывода
 };
 
 /// Заменяет ASSERT_ERROR на функцию ассерта
-#define ASSERT_ERROR(bool_result, file_name) \
+#define ASSERT_ERROR(bool_result) \
     {  \
+        const char *file_name = __FILE__; \
         if (!bool_result) {\
             if (strcmp(file_name, "solving.cpp") == 0 || strcmp(file_name, "solving.h") == 0) \
                 return SolvingFuncError; \
@@ -30,18 +31,17 @@ enum Errors {
         }\
     }
 
-
-
+// TODO: выровнить
 /// Заменяет CHECK_ERRORS на функцию, которая проверяет, какая вернулась ошибка
-#define CHECK_ERRORS(func_result) \
-    { \
-        Errors current_error = func_result; \
-        switch(current_error) {\
-            case NoError: \
-                break; \
-            case SolvingFuncError: \
-                printf("\nError in solving function");\
-                return SolvingFuncError; \
+#define CHECK_ERRORS(func_result)                      \
+    {                                                  \
+        Errors current_error = func_result;            \
+        switch(current_error) {                        \
+            case NoError:                              \
+                break;                                 \
+            case SolvingFuncError:                     \
+                printf("\nError in solving function"); \
+                return SolvingFuncError;               \
                 break; \
             case InputFuncError: \
                 printf("\nError in input function");\

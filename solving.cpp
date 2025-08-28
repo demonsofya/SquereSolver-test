@@ -13,8 +13,8 @@ Errors Linear(const Coeffs *coeffs, Roots *roots) {
 
     //assert (roots != NULL);
     //assert (coeffs != NULL);
-    ASSERT_ERROR(roots, __FILE__);
-    ASSERT_ERROR(coeffs, __FILE__);
+    ASSERT_ERROR(roots);
+    ASSERT_ERROR(coeffs);
 
     if (CompareDoubles(coeffs->b, 0)) {
         if (CompareDoubles(coeffs->c, 0)) {
@@ -36,8 +36,8 @@ Errors Quadr(const Coeffs *coeffs, Roots *roots) {
 
     //assert (roots != NULL);
     //assert (coeffs != NULL);
-    ASSERT_ERROR(roots, __FILE__);
-    ASSERT_ERROR(coeffs, __FILE__);
+    ASSERT_ERROR(roots);
+    ASSERT_ERROR(coeffs);
 
     const double discr = coeffs->b * coeffs->b - 4 * coeffs->a * coeffs->c; /* discriminant */
 
@@ -65,8 +65,8 @@ Errors SqrEq(const Coeffs *coeffs, Roots *roots) { /* function for solving squer
 
     //assert (roots != NULL);
     //assert (coeffs != NULL);
-    ASSERT_ERROR(roots, __FILE__);
-    ASSERT_ERROR(coeffs, __FILE__);
+    ASSERT_ERROR(roots);
+    ASSERT_ERROR(coeffs);
 
     if (CompareDoubles(coeffs->a, 0)) { /*Linear variant */
         RETURN_IF_ERROR(Linear(coeffs, roots));

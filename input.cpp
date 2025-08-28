@@ -10,7 +10,7 @@
 Errors Scan(Coeffs *coeffs) {
 
     //assert(coeffs != NULL);
-    ASSERT_ERROR(coeffs, __FILE__);
+    ASSERT_ERROR(coeffs);
 
     printf("The quadratic equation solver\n");
     printf("Enter three number: \n");

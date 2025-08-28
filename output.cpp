@@ -11,7 +11,7 @@ Errors Print(const Roots *roots) {
     //roots = NULL; //УБРАТЬ ЭТО ДЛЯ ПРОВЕРКИ -> output работает. до мейна дошел
 
     //assert(roots != NULL);
-    ASSERT_ERROR(roots, __FILE__);
+    ASSERT_ERROR(roots);
 
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 

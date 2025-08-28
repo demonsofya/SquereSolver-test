@@ -20,7 +20,7 @@ Errors IsFlag(int argc, const char **argv, Flags *flag) {
     //k.pointer(); // вызов функции, адрес которой в pointer
 
     //assert(argv); у меня теперь вместо ассертов проверка на ошибки
-    ASSERT_ERROR(argv, __FILE__);
+    ASSERT_ERROR(argv);
 
     if (argc == 1) {
         *flag = NO_FLAG;
@@ -51,7 +51,8 @@ Errors IsFlag(int argc, const char **argv, Flags *flag) {
             //assert(FLAGS_INFO[j].short_name);
             //assert(FLAGS_INFO[j].long_name);
 
-            if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) || (strcmp(argv[i], FLAGS_INFO[j].long_name) == 0)) {
+            if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) ||
+                (strcmp(argv[i], FLAGS_INFO[j].long_name)  == 0)) {
 
                 is_error = false;
                 FlagsArray[scanned_flags_counter++] = FLAGS_INFO[j].pointer;
@@ -68,13 +69,13 @@ Errors IsFlag(int argc, const char **argv, Flags *flag) {
 
     }
 
-    for (int j = 0; j < scanned_flags_counter; j++) {
+    for (int i = 0; i < scanned_flags_counter; i++) {
 
         //assert(FlagsArray[j]);
-        if (FlagsArray[j] == NULL)
+        if (FlagsArray[i] == NULL)
             return IsflagFuncError;
 
-        CHECK_ERRORS(FlagsArray[j]());
+        CHECK_ERRORS(FlagsArray[i]());
     }
 
     free(FlagsArray);

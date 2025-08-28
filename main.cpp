@@ -18,7 +18,7 @@ int main(int argc, const char *argv[]) {
     CHECK_ERRORS(IsFlag(argc, argv, &flag));
 
     if (flag == FLAGS_SCAN_ERROR || flag == FLAGS_SCAN_SUCCESS)
-        return int(NoError);
+        return 0;
 
     while(true) {
         Coeffs input_coeffs = {NAN, NAN, NAN};
@@ -40,5 +40,5 @@ int main(int argc, const char *argv[]) {
         printf("\n");
     }
 
-    return int(NoError);
+    return 0;
 }
