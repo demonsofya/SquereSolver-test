@@ -9,10 +9,6 @@
 
 Errors Linear(const Coeffs *coeffs, Roots *roots) {
 
-    //roots = NULL; //”¡–¿“‹ ›“Œ ƒÀﬂ œ–Œ¬≈– » -> ‚ÒÂ ‡·ÓÚ‡ÂÚ
-
-    //assert (roots != NULL);
-    //assert (coeffs != NULL);
     ASSERT_ERROR(roots);
     ASSERT_ERROR(coeffs);
 
@@ -34,8 +30,6 @@ Errors Linear(const Coeffs *coeffs, Roots *roots) {
 
 Errors Quadr(const Coeffs *coeffs, Roots *roots) {
 
-    //assert (roots != NULL);
-    //assert (coeffs != NULL);
     ASSERT_ERROR(roots);
     ASSERT_ERROR(coeffs);
 
@@ -63,8 +57,6 @@ Errors Quadr(const Coeffs *coeffs, Roots *roots) {
 
 Errors SqrEq(const Coeffs *coeffs, Roots *roots) { /* function for solving squere equation */
 
-    //assert (roots != NULL);
-    //assert (coeffs != NULL);
     ASSERT_ERROR(roots);
     ASSERT_ERROR(coeffs);
 

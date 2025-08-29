@@ -3,7 +3,6 @@
 #include <stdio.h>
 #include <math.h>
 #include <assert.h>
-//#include <TXLib.h>
 
 #include "isflag.h"
 #include "test.h"
@@ -19,7 +18,6 @@ Errors IsFlag(int argc, const char **argv, Flags *flag) {
     //k.pointer = Test; // присвоение в перменную адреса функции
     //k.pointer(); // вызов функции, адрес которой в pointer
 
-    //assert(argv); у меня теперь вместо ассертов проверка на ошибки
     ASSERT_ERROR(argv);
 
     if (argc == 1) {
@@ -44,12 +42,9 @@ Errors IsFlag(int argc, const char **argv, Flags *flag) {
 
         for (unsigned int j = 0; j < flags_size; j++) {
 
-            //assert(argv[i]);
             if (argv[i] == NULL || FLAGS_INFO[j].short_name == NULL
                                 || FLAGS_INFO[j].long_name == NULL)
                 return IsflagFuncError;
-            //assert(FLAGS_INFO[j].short_name);
-            //assert(FLAGS_INFO[j].long_name);
 
             if ((strcmp(argv[i], FLAGS_INFO[j].short_name) == 0) ||
                 (strcmp(argv[i], FLAGS_INFO[j].long_name)  == 0)) {
@@ -72,8 +67,7 @@ Errors IsFlag(int argc, const char **argv, Flags *flag) {
     for (int i = 0; i < scanned_flags_counter; i++) {
 
         //assert(FlagsArray[j]);
-        if (FlagsArray[i] == NULL)
-            return IsflagFuncError;
+        ASSERT_ERROR(FlagsArray[i]);
 
         CHECK_ERRORS(FlagsArray[i]());
     }

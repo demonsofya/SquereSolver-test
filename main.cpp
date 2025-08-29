@@ -1,16 +1,11 @@
 #include <stdio.h>
 #include <math.h>
-//#include <TXLib.h>
 
 #include "input.h"
 #include "output.h"
 #include "solving.h"
 #include "isflag.h"
 #include "Errors.h"
-
-// TODO: file errors.h with enum Errors {}
-// TODO: macros CHECK_ERROR, RETURN_ERROR and RETURN_NO_ERROR
-// TODO:
 
 int main(int argc, const char *argv[]) {
 

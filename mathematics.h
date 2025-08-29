@@ -10,7 +10,6 @@
 /// Точность функции сравнения даблов
 const double EPS = 0.001;
 
-// TODO: the same
 /// Функция для сравнения двух даблов
 bool CompareDoubles(double a, double b);
 

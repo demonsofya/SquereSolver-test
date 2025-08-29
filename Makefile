@@ -11,7 +11,7 @@ all: $(EXE)
 $(EXE) : $(OBJ) 
 	g++ $^ -o $@ 
 
-obj/%.o : %.cpp test.h input.h output.h solving.h isflag.h
+obj/%.o : %.cpp test.h input.h output.h solving.h isflag.h Errors.h
 	g++ -c $< -o $@ $(FLAGS)
 
 #obj/main.o : main.cpp test.h input.h output.h solving.h isflag.h
