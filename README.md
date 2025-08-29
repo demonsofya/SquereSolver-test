@@ -19,32 +19,32 @@ To use makefile:
 
 Information about flags
 
-`$ SquareEqualation.exe -h
+`$ SquareEqualation.exe -h`
 
 or
 
-`$ SquareEqualation.exe --help
+`$ SquareEqualation.exe --help`
 
 *Average using*
 
 Running program normally 
 
-`$ SquareEqualation.exe 
+`$ SquareEqualation.exe `
 
 and after getting massege
 
-`$ <first_coeff> <second_coeff> <third_coeff>
+`$ <first_coeff> <second_coeff> <third_coeff>`
 
 *Testing*
 
 To run UnitTests from file "UnitTest.txt"
 
 
-`$ SquareEqualation.exe -t
+`$ SquareEqualation.exe -t`
 
 or
 
-`$ SquareEqualation.exe --test
+`$ SquareEqualation.exe --test`
 
 
 ## Documentation
