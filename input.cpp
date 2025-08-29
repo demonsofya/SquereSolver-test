@@ -9,7 +9,6 @@
 
 Errors Scan(Coeffs *coeffs) {
 
-    //assert(coeffs != NULL);
     ASSERT_ERROR(coeffs);
 
     printf("The quadratic equation solver\n");
